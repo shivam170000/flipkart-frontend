@@ -1,0 +1,35 @@
+<div class="container" >
+    <div class="card mt-5" style="align-items: center;">
+    <h1 style="color:blue">PRODUCTS</h1>
+    </div>
+
+    <!--
+        product table
+    -->
+
+
+
+    <table class="table table-bordered mt-5">
+        <thead class="thead">
+<tr>
+    <th>Product ID</th>
+    <th>Product Name</th>
+    <th>Price</th>
+    <th>Seller</th>
+    <th>Want to change Something</th>
+</tr>
+        </thead>
+        <tbody class="tbody">
+             <tr *ngFor = "let product of Products">
+                <td><b>{{product.productID}}</b></td>
+                <td><div class ="text" >{{product.productName}}</div></td>
+                <td><div class="text">{{product.price}}</div></td>
+                <td><div class = "text">{{product.supplier.supplierName}}</div></td>
+                <td><button type="button" class="btn btn-warning mx-3">Edit</button> <button type="button" class="btn btn-danger mx-3">Delete</button></td>
+             </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
