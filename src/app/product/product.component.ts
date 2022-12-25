@@ -8,10 +8,31 @@ import { ProductserviceService } from '../productservice.service';
 export class ProductComponent {
 
 Products : any;
+//productsubmit:any;
+
 
 constructor(private ProductService : ProductserviceService){
   this.getProductDetails();
 }
+
+
+
+addingProduct(productsubmit: any){
+
+
+  this.ProductService.addProducts(productsubmit.value).subscribe(
+    (resp) =>{
+      console.log(resp);
+      alert("Added");
+    },
+    (err) =>{
+      console.log(err);
+    }
+  );
+
+}
+
+
 
 
 

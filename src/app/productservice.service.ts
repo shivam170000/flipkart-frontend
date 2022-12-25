@@ -12,6 +12,13 @@ export class ProductserviceService {
    API = 'http://localhost:9093/api/v1/products'
 
 
+
+
+   public addProducts(productData:any)
+   {
+      return this.http.post(this.API,productData);
+   }
+
    public getProducts(){
     return this.http.get(this.API);
    }

@@ -31,5 +31,54 @@
     </table>
 
 
+    <div class="text-center">
+        <button class = "btn btn-success mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal"  > Want to add products ?</button> 
+    </div>
+
+
+
+
+
+<!--post-->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Enter the product details</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form #productsubmit="ngForm" (ngSubmit) = "addingProduct(productsubmit)">
+                <div class="form-group ">
+                    <label for = "productID" style="padding : 10px;">Product ID</label>
+                    <input type = "text" #productID (ngModel)="productID" name = "productID" id="productID" class = "form-control" placeholder = "Enter Product ID">
+                </div>
+                <div class="form-group ">
+                  <label for = "productName" style="padding : 10px;">Product Name</label>
+                  <input type = "text" #productName (ngModel)="productName" name = "productName" id="productName" class = "form-control" placeholder = "Enter Product Name">
+              </div>
+              <div class="form-group ">
+                <label for = "price" style="padding : 10px;">Price</label>
+                <input type = "text" #price (ngModel)="price" name = "price" id="price" class = "form-control" placeholder = "Enter Product Price">
+            </div>
+            <div class="form-group ">
+              <label for = "unit" style="padding : 10px;">Units</label>
+              <input type = "text" #unit (ngModel)="unit" name = "unit" id="unit" class = "form-control" placeholder = "Enter Product Quantity">
+          </div>
+          <div class="form-group ">
+            <label for = "supplierID" style="padding : 10px;">Supplier ID</label>
+            <input type = "text" #supplierID (ngModel)="supplierID" name = "supplierID" id="supplierID" class = "form-control" placeholder = "Enter Supplier ID">
+        </div>
+        <div class = "form-group">
+          <input type = "submit" value = Register class = "btn btn-primary w-100 mt-5">
+        </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
 </div>
