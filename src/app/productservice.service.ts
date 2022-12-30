@@ -18,6 +18,10 @@ export class ProductserviceService {
       return this.http.post(this.API,[productData],{responseType:'text'});
    }
 
+
+
+ 
+
    public getProducts(){
     return this.http.get(this.API);
    }

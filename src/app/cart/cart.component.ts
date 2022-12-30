@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CartServiceService } from '../cart-service.service';
 import { Product } from '../models/product';
 import { Order, OrderVo , OrderDetails } from '../models/order';
@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 export class CartComponent {
 
 
-  items : Product[];
+  items : Product[] = [];
   totalPrice: number = 0;
 
   constructor(private cartService: CartServiceService , private orderService : OrderServiceService) {
@@ -29,6 +29,18 @@ export class CartComponent {
     this.cartService.emptyCart();
   }
 
+  @ViewChild('nameInput') nameInput!: ElementRef;
+
+
+  // removeProduct(item:any){
+  //   //console.log(item);
+  //   this.cartService.removeProductCart(item);
+  //   alert('removed');
+  //   //reload(true);
+  //  // this.cartService.getItems();
+  // }
+
+
   buyNow(){
     let date = new Date()
     let orderDetails: OrderDetails[]= []
@@ -39,7 +51,7 @@ export class CartComponent {
       })  
     });
     let order:OrderVo={
-      customerID: 1,
+      customerID : this.nameInput.nativeElement.value,
       date: date.toISOString().split('T')[0],
       shipperID:10001,
       orderDetails: orderDetails

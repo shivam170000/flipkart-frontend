@@ -123,6 +123,9 @@ getProductDetails(){
 edit(productVo: any){
   this.productToUpdate = productVo;
   this.productToUpdate.supplierID = productVo.supplier.supplierID;
+
+
+  
 }
 updateProd(){
   this.ProductService.updateProduct(this.productToUpdate).subscribe(
