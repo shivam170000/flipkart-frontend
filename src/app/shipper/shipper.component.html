@@ -1,1 +1,29 @@
-<p>shipper works!</p>
+
+
+<div class = "container">
+
+    <div class = "card mt-5" style = "align-items: center;">
+    <h1 style = "color:blue"><b>Shipper Details</b></h1>
+</div>
+
+    <table class="table table-bordered mt-5">
+        <thead class="thead">
+    <tr>
+    <th>Shipper ID</th>
+    <th>Shipper Name</th>
+    <th>Shipper Phone Number</th>
+    
+    </tr>
+        </thead>
+        <tbody class="tbody">
+             <tr *ngFor = "let shipper of shippers">
+                <td><b>{{shipper.shipperID}}</b></td>
+                <td><div class ="text" ><b>{{shipper.shipperName}}</b></div></td>
+                <td><div class="text"><b>{{shipper.phone}}</b></div></td>
+             </tr>
+        </tbody>
+    </table>
+
+
+    </div>
+
