@@ -1,1 +1,88 @@
-<p>signup works!</p>
+<div class="container" >
+    <div class="card mt-5" style="align-items: center;">
+    <h1 style="color:blue">CUSTOMERS</h1>
+    </div>
+
+    <!--
+        product table
+    -->
+
+
+
+    <table class="table table-bordered  mt-5">
+        <thead class="thead">
+<tr>
+    <th>Customer ID</th>
+    <th>Customer Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Pincode</th>
+    <th>Country</th>
+    <th>Edit Details</th>
+</tr>
+</thead>
+        
+        <tbody class="tbody">
+             <tr *ngFor = "let customer of customers" >
+                <td><b>{{customer.customerID}}</b></td>
+                <td><b>{{customer.customerName}}</b></td>
+                <td><b>{{customer.address}}</b></td>
+                <td><b>{{customer.city}}</b></td>
+                <td><b>{{customer.postalCode}}</b></td>
+                <td><b>{{customer.country}}</b></td>
+                <td><button type = "button" class="btn btn-warning">Edit</button></td>
+                </tr>
+        </tbody>
+    </table>
+    
+
+
+     <div class="text-center">
+        <button class = "btn btn-success mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal"  > New Customer ? Sign Up Here !</button> 
+    </div>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Enter the customer details</h1>
+              <button type="button" #closeaddModal class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form #customersubmit="ngForm" (ngSubmit) = "addingCustomer(customersubmit)">
+                <div class="form-group ">
+                    <label for = "cusomterID" style="padding : 10px;">customer ID</label>
+                    <input type = "text" #customerID (ngModel)="customerID" name = "customerID" id="customerID" class = "form-control" placeholder = "Enter Customer ID">
+                </div>
+                <div class="form-group ">
+                  <label for = "customerName" style="padding : 10px;">Customer Name</label>
+                  <input type = "text" #customerName (ngModel)="customerName" name = "customerName" id="customerName" class = "form-control" placeholder = "Enter Customer Name">
+              </div>
+              <div class="form-group ">
+                <label for = "address" style="padding : 10px;">Address</label>
+                <input type = "text" #address (ngModel)="address" name = "address" id="address" class = "form-control" placeholder = "Enter your address">
+            </div>
+            <div class="form-group ">
+              <label for = "city" style="padding : 10px;">City</label>
+              <input type = "text" #city (ngModel)="city" name = "city" id="city" class = "form-control" placeholder = "Enter City">
+          </div>
+          <div class="form-group ">
+            <label for = "postalCode" style="padding : 10px;">Pincode</label>
+            <input type = "text" #postalCode (ngModel)="postalCode" name = "postalCode" id="postalCode" class = "form-control" placeholder = "Enter your pincode">
+        </div>
+        <div class="form-group ">
+          <label for = "country" style="padding : 10px;">Country</label>
+          <input type = "text" #country (ngModel)="country" name = "country" id="country" class = "form-control" placeholder = "Enter your country">
+      </div>
+        <div class = "form-group">
+          <input type = "submit" value = Register class = "btn btn-primary w-100 mt-5 ">
+        </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+</div>

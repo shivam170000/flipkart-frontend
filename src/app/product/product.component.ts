@@ -27,20 +27,21 @@ productVo: ProductVo = new ProductVo();
 constructor(private ProductService : ProductserviceService , private cartService : CartServiceService){
 
   Swal.fire({
-    title :'Sale ?',
+    title :'Sale !',
     text : 'That thing is still around.',
-    timer:2000
+    timer:1250,
+    showConfirmButton:false
 })
   this.getProductDetails();
 }
 
-productToUpdate = {
-  productID :"",
-  productName : "",
-  unit : "",
-  price : "",
-  supplierID: ""
-}
+// productToUpdate = {
+//   productID :"",
+//   productName : "",
+//   unit : "",
+//   price : "",
+//   supplierID: ""
+// }
 
 
 addToCart(product:Product){
@@ -72,40 +73,40 @@ addToCart(product:Product){
 }
 
 
-addingProduct(productsubmit: NgForm){
-  this.ProductService.addProducts(productsubmit.value).subscribe(
-    (resp) =>{
-      console.log(resp);
-     // alert("Added");
-      productsubmit.reset();
-      (this.closeadd.nativeElement as HTMLElement).click()
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'center',
-        showConfirmButton: false,
-        timer: 2000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer);
-          toast.addEventListener('mouseleave', Swal.resumeTimer);
-        },
-      });
+// addingProduct(productsubmit: NgForm){
+//   this.ProductService.addProducts(productsubmit.value).subscribe(
+//     (resp) =>{
+//       console.log(resp);
+//      // alert("Added");
+//       productsubmit.reset();
+//       (this.closeadd.nativeElement as HTMLElement).click()
+//       const Toast = Swal.mixin({
+//         toast: true,
+//         position: 'center',
+//         showConfirmButton: false,
+//         timer: 2000,
+//         timerProgressBar: true,
+//         didOpen: (toast) => {
+//           toast.addEventListener('mouseenter', Swal.stopTimer);
+//           toast.addEventListener('mouseleave', Swal.resumeTimer);
+//         },
+//       });
   
-      Toast.fire({
-        icon: 'success',
-        title: 'Product Added Successfully',
-      });
-      this.getProductDetails();
-    },
-    (err) =>{
-      alert("Added");
-      productsubmit.resetForm();
-      this.getProductDetails();
-      console.log(err);
-    }
-  );
+//       Toast.fire({
+//         icon: 'success',
+//         title: 'Product Added Successfully',
+//       });
+//       this.getProductDetails();
+//     },
+//     (err) =>{
+//       alert("Added");
+//       productsubmit.resetForm();
+//       this.getProductDetails();
+//       console.log(err);
+//     }
+//   );
 
-}
+// }
 
 getProductDetails(){
   this.ProductService.getProducts().subscribe(
@@ -120,66 +121,66 @@ getProductDetails(){
   )
 }
 
-edit(productVo: any){
-  this.productToUpdate = productVo;
-  this.productToUpdate.supplierID = productVo.supplier.supplierID;
+// edit(productVo: any){
+//   this.productToUpdate = productVo;
+//   this.productToUpdate.supplierID = productVo.supplier.supplierID;
 
 
   
-}
-updateProd(){
-  this.ProductService.updateProduct(this.productToUpdate).subscribe(
-    (resp) =>{
-      console.log(resp);
-      //alert("Added");
-      //productsubmit.resetForm();
-      (this.closeedit.nativeElement as HTMLElement).click()
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'center',
-        showConfirmButton: false,
-        timer: 2000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer);
-          toast.addEventListener('mouseleave', Swal.resumeTimer);
-        },
-      });
+// }
+// updateProd(){
+//   this.ProductService.updateProduct(this.productToUpdate).subscribe(
+//     (resp) =>{
+//       console.log(resp);
+//       //alert("Added");
+//       //productsubmit.resetForm();
+//       (this.closeedit.nativeElement as HTMLElement).click()
+//       const Toast = Swal.mixin({
+//         toast: true,
+//         position: 'center',
+//         showConfirmButton: false,
+//         timer: 2000,
+//         timerProgressBar: true,
+//         didOpen: (toast) => {
+//           toast.addEventListener('mouseenter', Swal.stopTimer);
+//           toast.addEventListener('mouseleave', Swal.resumeTimer);
+//         },
+//       });
   
-      Toast.fire({
-        icon: 'success',
-        title: 'Product Details Updated Successfully',
-      });
+//       Toast.fire({
+//         icon: 'success',
+//         title: 'Product Details Updated Successfully',
+//       });
 
-      this.modalService.dismissAll();
-      this.getProductDetails();
-    },
-    (err) =>{
-      //alert("Added");
-      //productsubmit.resetForm();
-      //this.getProductDetails();
-      console.log(err);
-    }
-  );
-}
+//       this.modalService.dismissAll();
+//       this.getProductDetails();
+//     },
+//     (err) =>{
+//       //alert("Added");
+//       //productsubmit.resetForm();
+//       //this.getProductDetails();
+//       console.log(err);
+//     }
+//   );
+// }
 
-deleteProduct(product:any){
-  this.ProductService.deleteProduct(product.productID).subscribe(
-    (resp) => {
-      console.log(resp);
-     // alert("Deleted");
-     Swal.fire({
-      title: "Product Deleted !",
-      text: "",
-      timer: 2000
-    });
-      this.getProductDetails();
-    },
-    (err) => {
-      console.log(err)
-    }
-  )
-}
+// deleteProduct(product:any){
+//   this.ProductService.deleteProduct(product.productID).subscribe(
+//     (resp) => {
+//       console.log(resp);
+//      // alert("Deleted");
+//      Swal.fire({
+//       title: "Product Deleted !",
+//       text: "",
+//       timer: 2000
+//     });
+//       this.getProductDetails();
+//     },
+//     (err) => {
+//       console.log(err)
+//     }
+//   )
+// }
 
 
 }

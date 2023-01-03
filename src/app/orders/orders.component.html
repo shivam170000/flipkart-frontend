@@ -1,16 +1,16 @@
 <div class="container">
     <div class = "card mt-5" style = "align-items:center">
-    <h1 style = "color:blue">Order Details</h1>
+    <h1 style = "color:blue"><B>ORDERS</B></h1>
     </div>
     <table class = "table table-bordered table-striped mt-5">
-        <thead class="thead-light">
-            <tr>
+        <thead class="thead">
+            <tr class="table-primary">
             <td><b>Order ID</b></td>
             <td><b>Customer Name</b></td>
             <td><b>Order Date</b></td>
             <td><b>Shipper</b></td>
             <td><b>Product Name</b></td>
-            <td><B>Quantity</B></td>
+            <!-- <td><B>Quantity</B></td> -->
             </tr>
         </thead>
         <tbody class="tbody">
@@ -20,7 +20,7 @@
             <td><b>{{order.date}}</b></td>
             <td><b>{{order.shipper.shipperName}}</b></td>
             <td><tr *ngFor="let od of order.orderDetails"><b>{{od.product.productName}}</b></tr></td>
-            <td><tr *ngFor="let od of order.orderDetails"><b>{{od.quantity}}</b></tr></td>
+            <!-- <td><tr *ngFor="let od of order.orderDetails"><b>{{od.quantity}}</b></tr></td> -->
             </tr>
         </tbody> 
     </table>

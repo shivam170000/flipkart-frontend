@@ -1,6 +1,6 @@
 <div class="container" *ngIf = "items?.length != 0">
     <div class = "card mt-5" style = "align-items: center;">
-        <h1 style = "color:tomato " ><b>Cart Details</b></h1>
+        <h1 style = "color:blue " ><b>CART</b></h1>
     </div>
    
     <table class = "table table-bordered mt-5">
@@ -8,7 +8,7 @@
             <tr>
                 <th><b>Product ID</b></th>
                 <th><b>Product Name</b></th>
-                <th><b>Unit</b></th>
+                <th><b>Quantity</b></th>
                 <th><b>Price</b></th>
                 <th><b>Supplier ID</b></th>
                 <th><b>Change of plan</b></th>
@@ -21,7 +21,7 @@
                 <td><b>{{item.unit}}</b></td>
                 <td><b>{{item.price | currency : 'INR'}}</b></td>
                 <td><b>{{item.supplier.supplierName}}</b></td>
-                <!-- <td><button type = "button" class = "btn btn-warning" (click) = "removeProduct(item)"><b>Remove Product</b></button></td> -->
+                 <td><button type = "button" class = "btn btn-warning" (click) = "removeProduct(item)"><b>Remove Product</b></button></td>
             </tr>
         </tbody>
     </table>
@@ -32,9 +32,13 @@
                 <label for = "nameInput" style="padding:20px"><b> Enter Customer ID : </b></label>
                 <input #nameInput type="text" class="form-control" placeholder='Enter Customer ID'/>
              </div>
+             <div class = "form-group">
+                <label for = "postalInput" style="padding:20px"><b> Enter Your Postal Code : </b></label>
+                <input #postalInput type="text" class="form-control" placeholder='Enter PostalCode'/>
+             </div>
 </div>
-<div class="text-center">
-<button type = "button mt-5" class = "btn btn-success" (click) = "buyNow()">Proceed To Buy</button>
+<div class="text-center" style = "margin: 20px;">
+<button type = "button" class = "btn btn-success" (click) = "buyNow()">Proceed To Buy</button>
 </div>
 </div>
 

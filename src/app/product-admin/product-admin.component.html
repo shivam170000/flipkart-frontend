@@ -1,6 +1,6 @@
 <div class="container" >
     <div class="card mt-5" style="align-items: center;">
-    <h1 style="color:blue">PRODUCTS</h1>
+    <h1 style="color:blue">AVAILABLE STOCK</h1>
     </div>
 
     <!--
@@ -11,12 +11,12 @@
 
     <table class="table table-bordered mt-5">
         <thead class="thead">
-<tr class="table-dark">
+<tr>
     <th>Product ID</th>
     <th>Product Name</th>
     <th>Price</th>
     <th>Seller</th>
-    <th>Grab your product from here</th>
+    <th>Want to change Something</th>
 </tr>
         </thead>
         <tbody class="tbody">
@@ -25,7 +25,7 @@
                 <td><div class ="text" >{{product.productName}}</div></td>
                 <td><div class="text">{{product.price | currency : 'INR'}}</div></td>
                 <td><div class = "text">{{product.supplier.supplierName}}</div></td>
-                <td> <button type="button" class = "btn btn-warning mx-3" (click) = "addToCart(product)"><b>Cart</b></button></td>
+                <td><button type="button" class="btn btn-warning mx-3" data-bs-toggle="modal" data-bs-target="#exampleModaledit" (click) = "edit(product)">Edit</button> <button type="button" class="btn btn-danger mx-3"  (click) = "deleteProduct(product)" >Delete</button> </td>
              </tr>
         </tbody>
     </table>
@@ -35,7 +35,7 @@
 
 
     <div class="text-center">
-      <button class = "btn btn-primary mx-3" routerLink = "/productAdmin" style="padding:10px" > Admin</button> 
+      <button class = "btn btn-success mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal"  > Want to add products ?</button> 
   </div>
 
 
@@ -43,7 +43,7 @@
 
 
 <!--post-->
-<!-- 
+
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -85,7 +85,7 @@
 
 
 
-post
+<!-- post
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -129,7 +129,7 @@ post
 
      
       <!--Edit-->
-      <!-- <div class="modal fade" id="exampleModaledit" tabindex="-1" aria-labelledby="exampleModaleditLabel" aria-hidden="true">
+      <div class="modal fade" id="exampleModaledit" tabindex="-1" aria-labelledby="exampleModaleditLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -166,7 +166,7 @@ post
           </div>
         </div>
       </div>
- -->
+
 
 
 

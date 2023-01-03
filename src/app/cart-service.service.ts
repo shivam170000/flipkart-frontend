@@ -39,10 +39,10 @@ export class CartServiceService {
    return JSON.parse(localStorage.getItem('items') || '[]');
   }
 
-  //removeProductCart(product:any){
-    //localStorage.setItem('items', JSON.stringify(this.items.filter(p => p.productID != product.productID)));
-    //localStorage.removeItem(product);
-    //return this.getItems();
+  // removeProductCart(product:any){
+  //   localStorage.setItem('items', JSON.stringify(this.items.filter(p => p.productID != product.productID)));
+  //   localStorage.removeItem(product);
+  //   return this.getItems();
 
  // }
 

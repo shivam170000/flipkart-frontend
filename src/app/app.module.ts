@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 //import { ModalModule } from 'ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductAdminComponent } from './product-admin/product-admin.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CartComponent,
     SignupComponent,
     OrdersComponent,
-    HomeComponent
+    HomeComponent,
+    ProductAdminComponent
   ],
   imports: [
     BrowserModule,
