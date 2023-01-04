@@ -4,6 +4,7 @@ export interface Product {
     unit: number;
     price: number;
     supplierID: number;
+    productImage : string;
     supplier: any; //json
   }
   
@@ -13,4 +14,5 @@ export interface Product {
     unit! : number;
     price! : number;
     supplierID! : number;
+    productImage !: string;
   }
